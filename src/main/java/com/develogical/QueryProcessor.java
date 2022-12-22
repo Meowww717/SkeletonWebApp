@@ -1,6 +1,9 @@
 package com.develogical;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,11 +27,31 @@ public class QueryProcessor {
         }
 
         if (query.toLowerCase().contains("following numbers")) {
-            return "the largest number is";
+
+            List<Integer> nums = new ArrayList<>();
+
+            String numberOnly= query.replaceAll("[^0-9]", "/");
+            String[] num = numberOnly.split("/");
+            for (int i = 0; i < num.length; i++) {
+                if(!num[i].equals("")) {
+                    nums.add(Integer.valueOf(num[i]));
+                }
+
+            }
+
+            return String.valueOf(Collections.max(nums));
         }
 
         if (query.toLowerCase().contains("plus")) {
-            return "sum of 2 numbers is";
+            Integer sum = 0;
+            String numberOnly= query.replaceAll("[^0-9]", "/");
+            String[] num = numberOnly.split("/");
+            for (int i = 0; i < num.length; i++) {
+                if(!num[i].equals(""))
+                    sum += Integer.valueOf(num[i]);
+            }
+
+            return String.valueOf(sum);
         }
 
         return "";

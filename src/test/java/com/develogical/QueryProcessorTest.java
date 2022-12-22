@@ -32,12 +32,12 @@ public class QueryProcessorTest {
 
     @Test
     public void knowsAboutFollowingNumbers() throws Exception {
-        assertThat(queryProcessor.process("following numbers"), containsString("the largest number is"));
+        assertThat(queryProcessor.process("Which of the following numbers is the largest: 41, 43, 36?"), containsString("43"));
     }
 
     @Test
     public void knowsAboutPlusNumber() throws Exception {
-        assertThat(queryProcessor.process("plus"), containsString("sum of 2 numbers is"));
+        assertThat(queryProcessor.process("What is 10 plus 88?"), containsString("98"));
     }
 
 }
