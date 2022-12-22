@@ -54,6 +54,20 @@ public class QueryProcessor {
             return String.valueOf(sum);
         }
 
+        if (query.toLowerCase().contains("multiplied")) {
+            Integer mult = 0;
+            List<Integer> nums = new ArrayList<>();
+            String numberOnly= query.replaceAll("[^0-9]", "/");
+            String[] num = numberOnly.split("/");
+            for (int i = 0; i < num.length; i++) {
+                if(!num[i].equals(""))
+                    nums.add(Integer.valueOf(num[i]));
+            }
+            mult = nums.get(0) * nums.get(1);
+
+            return String.valueOf(mult);
+        }
+
         return "";
     }
     

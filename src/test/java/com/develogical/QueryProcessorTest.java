@@ -40,4 +40,10 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("What is 10 plus 88?"), containsString("98"));
     }
 
+    @Test
+    public void knowsAboutMultipliedNumber() throws Exception {
+        assertThat(queryProcessor.process("What is 96 multiplied by 5?"), containsString("480"));
+    }
+
+
 }
