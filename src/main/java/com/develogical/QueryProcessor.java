@@ -19,6 +19,11 @@ public class QueryProcessor {
             return "William Shakespeare (26 April 1564 - 23 April 1616) didn't know anything about Test Driven Development.";
         }
 
+        if (query.toLowerCase().contains("your name")) {
+            return "ValentynaAndHana";
+        }
+
+
         return "";
     }
     
