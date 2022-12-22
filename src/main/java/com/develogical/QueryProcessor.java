@@ -77,7 +77,7 @@ public class QueryProcessor {
             nums.forEach(integer -> {
                 double x = Math.sqrt(integer);
                 double y = Math.cbrt(integer);
-                if (x == y) {
+                if (x % 1 == 0  && y % 1 == 0) {
                     sqAndCube[0] = integer;
                 }
             });
