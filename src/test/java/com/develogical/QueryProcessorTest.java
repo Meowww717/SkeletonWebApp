@@ -50,10 +50,10 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("Which of the following numbers is both a square and a cube: 117, 1, 64, 277, 1861, 1936, 142?"), containsString("1936"));
     }
 
-//    @Test
-//    public void knowsAboutPrimes() throws Exception {
-//        assertThat(queryProcessor.process("Which of the following numbers are primes: 12, 99, 40, 30, 0?"), containsString("4096"));
-//    }
+    @Test
+    public void knowsAboutPrimes() throws Exception {
+        assertThat(queryProcessor.process("Which of the following numbers are primes: 89, 33, 10, 1, 16?"), containsString("89"));
+    }
 
 
 

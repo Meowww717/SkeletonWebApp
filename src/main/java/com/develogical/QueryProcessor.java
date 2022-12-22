@@ -85,6 +85,33 @@ public class QueryProcessor {
             return String.valueOf(sqAndCube[0]);
         }
 
+        if (query.toLowerCase().contains("primes")) {
+            final Integer[] prime = {0};
+            List<Integer> nums = new ArrayList<>();
+            String numberOnly= query.replaceAll("[^0-9]", "/");
+            String[] num = numberOnly.split("/");
+            for (int i = 0; i < num.length; i++) {
+                if(!num[i].equals(""))
+                    nums.add(Integer.valueOf(num[i]));
+            }
+
+            nums.forEach(integer -> {
+                boolean flag = false;
+
+                for (int i = 2; i <= integer / 2; ++i) {
+                    if (integer % i == 0) {
+                        flag = true;
+                        break;
+                    }
+                }
+
+                if(!flag) {
+                    prime[0] = integer;
+                }
+            });
+
+            return String.valueOf(prime[0]);
+        }
 
         return "";
     }
