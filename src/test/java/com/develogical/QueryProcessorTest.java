@@ -45,5 +45,10 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("What is 96 multiplied by 5?"), containsString("480"));
     }
 
+    @Test
+    public void knowsAboutSquareOrCube() throws Exception {
+        assertThat(queryProcessor.process("Which of the following numbers is both a square and a cube: 2197, 1813, 531, 1296, 4096, 431, 3245?"), containsString("4096"));
+    }
+
 
 }

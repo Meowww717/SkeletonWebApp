@@ -1,12 +1,8 @@
 package com.develogical;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.BinaryOperator;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class QueryProcessor {
 
@@ -67,6 +63,28 @@ public class QueryProcessor {
 
             return String.valueOf(mult);
         }
+
+        if (query.toLowerCase().contains("square and a cube")) {
+            final Integer[] sqAndCube = {0};
+            List<Integer> nums = new ArrayList<>();
+            String numberOnly= query.replaceAll("[^0-9]", "/");
+            String[] num = numberOnly.split("/");
+            for (int i = 0; i < num.length; i++) {
+                if(!num[i].equals(""))
+                    nums.add(Integer.valueOf(num[i]));
+            }
+
+            nums.forEach(integer -> {
+                double x = Math.sqrt(integer);
+                double y = Math.cbrt(integer);
+                if (x == y) {
+                    sqAndCube[0] = integer;
+                }
+            });
+
+            return String.valueOf(sqAndCube[0]);
+        }
+
 
         return "";
     }
