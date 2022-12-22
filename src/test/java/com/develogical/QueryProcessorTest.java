@@ -20,4 +20,9 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("Shakespeare"), containsString("playwright"));
     }
 
+    @Test
+    public void knowsAboutTestDrivenDevelopment() throws Exception {
+        assertThat(queryProcessor.process("TDD"), containsString("Test Driven Development"));
+    }
+
 }

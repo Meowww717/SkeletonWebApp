@@ -15,6 +15,10 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         }
 
+        if (query.toLowerCase().contains("tdd")) {
+            return "William Shakespeare (26 April 1564 - 23 April 1616) didn't know anything about Test Driven Development.";
+        }
+
         return "";
     }
     
