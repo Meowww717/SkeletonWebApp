@@ -23,6 +23,13 @@ public class QueryProcessor {
             return "ValentynaAndHana";
         }
 
+        if (query.toLowerCase().contains("following numbers")) {
+            return "the largest number is";
+        }
+
+        if (query.toLowerCase().contains("plus")) {
+            return "sum of 2 numbers is";
+        }
 
         return "";
     }

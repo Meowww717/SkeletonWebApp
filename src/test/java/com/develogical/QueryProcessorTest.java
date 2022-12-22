@@ -30,4 +30,14 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("your name"), containsString("ValentynaAndHana"));
     }
 
+    @Test
+    public void knowsAboutFollowingNumbers() throws Exception {
+        assertThat(queryProcessor.process("following numbers"), containsString("the largest number is"));
+    }
+
+    @Test
+    public void knowsAboutPlusNumber() throws Exception {
+        assertThat(queryProcessor.process("plus"), containsString("sum of 2 numbers is"));
+    }
+
 }
